@@ -1,0 +1,56 @@
+-------------------------------------------------------------
+---------------------安装CH340驱动---------------------------
+-------------------------------------------------------------
+
+1. 删除 系统自带的版本（如果没有就不用删）
+
+	cd /lib/modules/$(uname -r)/kernel/drivers/usb/serial
+
+	查看是否有ch341.ko文件（或其ch开头的文件）
+	
+	sudo rm -rf ch341.ko     --删除老版本文件
+	
+2. 下载驱动   --（官网下载：http://www.wch.cn/download/CH341SER_LINUX_ZIP.html）
+
+	解压后得到以下3个文件：
+	
+	--ch34x.c    --Makefile    --readme.txt
+	
+3. 查询操作系统的发行编号
+
+	uname -r     --查看编号
+	
+	进入 https://elixir.bootlin.com/linux/v5.11/source/drivers/usb/serial/ch341.c
+	
+	根据查询到的操作系统的发行编号，打开对应的版本，复制所有内容替换ch34x.c内容。
+	
+4. 编译源程序
+
+	cd切换至下载的文件夹
+	
+	make     --make编译源码，生成ch34x.ko文件 (编译需要安装gcc与make)
+	
+	复制ch34x.ko文件至系统默认驱动文件夹:
+	sudo cp ch34x.ko /lib/modules/$(uname -r)/kernel/drivers/usb/serial 
+	
+	sudo make load
+	
+	如果没有权限执行 ：
+	重启进入BIOS，修改安全启动选项，禁用安全启动选项，开机后重新sudo运行之前的指令
+	f2（进入BIOS）  --->   boot   ---->  关闭安全选项
+	
+5. 查看是否安装完成
+
+	lsmod  --输入命令查看
+	
+	
+注意：
+
+	看到ch34x模块，至此ch34驱动安装完成，如果未看到，输入sudo depmod -a命令，重启一次电脑
+	
+	
+	
+	
+	
+	
+	

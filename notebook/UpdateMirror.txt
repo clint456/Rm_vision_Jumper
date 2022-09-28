@@ -1,0 +1,80 @@
+ctrl + alt + t = terminal  == conselo
+
+1、备份 /etc/apt/sources.list 文件
+
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.old  
+
+2、打开文件 
+
+sudo vim /etc/apt/sources.list
+
+3、复制阿里源（Ubuntu18.04 配置如下）: 
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+
+————————————————
+————————————————
+
+复制阿里ubuntu源20.04
+
+deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+
+-----------------------------
+
+4、重新获取软件包列表  [更新源]
+
+sudo apt-get update
+
+5、在执行安装命令
+
+sudo apt-get install yum
+
+
+-----------------------------
+-----------------------------
+
+4、复损坏的软件包，尝试卸载出错的包，重新安装正确版本的。
+
+sudo apt-get -f install
+
+5、更新软件
+
+sudo apt-get upgrade
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+/home/jumper/GZEU_Jumper/newArmor2/build/CMakeFiles/rebuild_cache.dir
+/home/jumper/GZEU_Jumper/newArmor2/build/CMakeFiles/edit_cache.dir
+/home/jumper/GZEU_Jumper/newArmor2/build/CMakeFiles/main.dir
